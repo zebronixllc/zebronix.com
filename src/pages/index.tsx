@@ -1,118 +1,75 @@
 import Image from "next/image";
+import { useState } from "react";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+    <div className="overflow-hidden">
+    <div className="absolute z-0 overflow-hidden h-screen w-screen top-0 left-0">
+      <video className="h-full w-full object-cover" autoPlay loop muted playsInline>
+        <source src="https://nolag.host/vendor/videoplayback.webm" type="video/webm" />
+        <source src="https://nolag.host/vendor/videoplayback.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <section className="relative overflow-auto bg-[#0b0b0f]/70 backdrop-blur border-b border-white/5">
+      <div className="relative z-10 w-full mx-auto max-w-7xl p-5 lg:px-16 md:flex md:items-center md:justify-between md:px-6">
+        <div className="relative w-full mx-auto max-w-7xl">
+          <div className="relative flex flex-col w-full mx-auto lg:px-16 md:flex-row md:items-center md:justify-between md:px-6">
+            <div className="flex flex-row items-center justify-between text-sm text-white lg:justify-start">
+                <span className="flex">
+                  <img width="40" height="23" src="/ziconweb.png" alt="sluglogo" />
+                  <span className="m-4  text-xl">Zebronix</span>
+                </span>
+              <button className="inline-flex items-center justify-center p-2 text-white focus:outline-none focus:text-black hover:text-black md:hidden" onClick={() => setOpen(!open)}>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path className={`${open ? 'hidden' : 'inline-flex'}`} d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  <path className={`${open ? 'inline-flex' : 'hidden'}`} d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                </svg>
+              </button>
+            </div>
+            <nav className={`${open ? 'flex' : 'hidden'} md:flex md:flex-row md:justify-end md:pb-0`}>
+              <div className="inline-flex items-center gap-2 list-none lg:ml-auto">
+                <a href="#service" className="block px-4 py-2 mt-2 text-sm text-white hover:text-white/50 focus:outline-none focus:shadow-outline md:mt-0">
+                  Services
+                </a>
+                <a  className="block px-4 py-2 mt-2 text-sm text-white hover:text-white/50 focus:outline-none focus:shadow-outline md:mt-0">
+                  Premium
+                </a>
+                <a href="https://dash.zebronix.com" className="text-white text-sm py-2 focus:outline-none px-4 active:text-#279f0e bg-[#17181d]/70 backdrop-blur transition hover:bg-[#1b1c22] focus-visible:outline-2 focus-visible:outline-fuchsia-50 focus-visible:outline-offset-2 group inline-flex items-center justify-center rounded-xl">
+                  Get started
+                </a>
+              </div>
+            </nav>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+    </section>
+    {/* hero  secrion*/}
+    <section className=" overflow-hidden relative items-center justify-center bg-[#0b0b0f]/50 flex h-screen">
+      <div className="relative z-10 w-full px-5 py-12 mx-auto lg:px-16 max-w-7xl md:px-12">
+        <div className="relative items-center w-full px-5 py-12 mx-auto lg:px-16 max-w-7xl md:px-12">
+          <div className="max-w-3xl mt-2 mx-auto text-center">
+            <div>
+              <p className="text-3xl font-medium tracking-tight text-white/70 lg:text-6xl">
+                Game server hosting
+                <span className="md:block text-white">Fast, simple and freemium</span>
+              </p>
+              <p className="max-w-xl mx-auto mt-8 text-base lg:text-xl text-gray-400">
+                Effortlessly deploy, edit and manage high-performance 24/7 game servers. Create your free or Paid server in under 5min.
+              </p>
+            </div>
+            <div className="flex flex-col justify-center max-w-sm gap-3 mx-auto mt-10 sm:flex-row">
+              <a href="https://billing.zebronix.com/" className="text-white focus:outline-none inline-flex items-center justify-center rounded-full bg-[#3d49f5] duration-200 focus-visible:outline-black focus-visible:ring-black font-medium hover:bg-[#1d4ed8] hover:border-white hover:text-white lg:w-auto px-6 py-2 text-center w-full">Premium</a>
+              <a href="https://dash.zebronix.com" className="text-white focus:outline-none inline-flex items-center justify-center rounded-full bg-[#3d49f5] duration-200 focus-visible:outline-black focus-visible:ring-black font-medium hover:bg-[#1d4ed8] hover:border-white hover:text-white lg:w-auto px-6 py-2 text-center w-full">Free</a>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </section></div>
+    </>
   );
-}
+};
